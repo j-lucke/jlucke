@@ -4,7 +4,52 @@
     justify-content: end;
     height: 50px;
     align-items: center;
+    padding: 20px 40px;
+}
 
+#contact-button {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 30px;
+    font-size: 20px;
+}
+
+#contact-button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: black;
+
+}
+
+#contact-me {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+}
+
+#contact-form {
+    height: 500px;
+}
+
+#form-top {
+    display: flex;
+    flex-direction: row;
+}
+
+#form-bottom {
+
+}
+
+.form-duo {
+    margin: 10px;
+    font-size: 30px;
+}
+
+.form-duo > input {
+    font-size: 30px;
 }
 
 a:hover {
@@ -23,8 +68,8 @@ canvas {
 }
 
 #intro {
-    margin-left: 50px;
-    margin-bottom: 100px;
+   text-align: center;
+   padding-bottom: 100px;
 }
 
 #intro > h1 {
@@ -50,7 +95,8 @@ canvas {
 
 .project {
     margin: auto;
-    padding: 100px 0px;
+    margin-bottom: 30px;
+    padding: 10px 10px;
     display: flex;
     flex-direction: row;
     flex-flow: wrap;
@@ -58,6 +104,9 @@ canvas {
     align-items: center;
     opacity: 10%;
     transition: 2s;
+    border: 1px solid grey;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px;
 }
 
 .even {

@@ -27,7 +27,7 @@ function send_mail(words, recipient) {
     const mail_options = {
         from: `ME <${process.env.user}>`,
         to: recipient,
-        subject: 'BOP! got em',
+        subject: 'portfolio',
         text: words
     }
 
@@ -41,6 +41,9 @@ function send_mail(words, recipient) {
     })
 }
 
+function composeEmail(body) {
+    return 'from: ' + body.name + '\n' + 'at: ' + body.email + '\n' + '\n' + body.message
+}
 
 
 app.use( (req, res, next) => {
@@ -52,10 +55,9 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(express.static(path.join(__dirname, 'public')))
 
-
 app.post('/contact', (req, res) => {
     res.sendStatus(200)
-    send_mail(req.body.message, 'luckejonathan2@gmail.com')
+    send_mail(composeEmail(req.body), 'luckejonathan2@gmail.com')
     console.log(req.body)
 })
 
