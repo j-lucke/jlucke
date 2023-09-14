@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="header">
+        <div class="icon">
+            <a href="https://github.com/j-lucke"><img class="icon" src="github-mark.png"></a>
+        </div>
+    </div>
+
+    <canvas></canvas>
+
+
+    <div id="intro">
+        <h1>I'm Jonathan Lucke</h1>
+        <p>Math prof turned web dev.<br>Examples below</examples></p>            
+    </div>
+
+    <div id="projects">
+        <div class="project" id="hufr">
+            <div class="container">
+                <video class="project-pic" src="hufr.mp4">
+                </video>
+                <div class="project-links">
+                    <a href="https://heads-up-for-rolls.onrender.com">go live</a>
+                    <a href="https://github.com/j-lucke/hufr">see code</a>
+                </div>
+            </div>
+            <div class = container>
+                <h2 class="project-title">Heads-up for Rolls</h2>
+                <p class="caption">
+                    Ever play poker online?
+                    Here's your chance.
+                    <em>Heads-up for Rolls </em>is an online poker site (just for fun, of course!) created using Express and Socket.IO 
+                    Invite your friends and teach 'em a lesson!
+                </p>
+            </div>
+        </div>
+        <div class="project even" id="umnt">
+            <div class="container">
+                <h3 class="project-title">USMNT social</h3>
+                <p class="caption">
+                    See who's trending on the US Men's National Team with USMNT-social.  
+                    Launched in January 2023 (just after the world cup) this site uses the twitter API to track 
+                    followers and mentions for everybody whose anybody in the world of US Men's soccer.  
+                    Data is culled using hourly chron jobs that run on Node.JS and write to a Postgres Data base.
+                </p>
+            </div>
+            <div class="container">
+                <video class="project-pic" src="usmnt.mp4"></video>
+                <div class="project-links">
+                    <a href="https://parcel-test.onrender.com">go live</a>
+                    <a href="https://github.com/j-lucke/webapp">see code</a>
+                </div>
+            </div>
+        </div>
+        <div class="project" id="fractal">
+            <div class="container">
+                <video class="project-pic" src="fractal.mp4"></video>
+                <div class="project-links">
+                    <a href="https://fractal-viewer.onrender.com">go live</a>
+                    <a href="https://github.com/j-lucke/fractals">see code</a>
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="project-title">Fractal Viewer</h3>
+                <p class="caption">
+                    The Mandelbrot Set.  Required material for math-heads everywhere, 
+                    and visually stunning for the population at large.
+                    Use this fractal viewer to explore a strange world. Infinite zoom and 
+                    interesting visual filters let you create amazing images that you can download in png format.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <form id="contact-me" action="/contact" method="post">
+        <input type="text" name="message">
+        <input type="submit">
+    </form>
+
+
+    <script src="index.js"></script>
+</body>
+</html>
