@@ -1,13 +1,14 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 
 const path = require('path')
 const nodemailer = require('nodemailer')
 const {google} = require('googleapis')
-const config = require('./config.js')
+//const config = require('./config.js')
 const OAuth2 = google.auth.OAuth2
-const OAuth2_client = new OAuth2(config.clientId, config.clientSecret)
-OAuth2_client.setCredentials({refresh_token: config.refreshToken})
+const OAuth2_client = new OAuth2(process.env.clientId, process.env.clientSecret)
+OAuth2_client.setCredentials({refresh_token: process.env.refreshToken})
 
 function send_mail(words, recipient) {
     const accessToken = OAuth2_client.getAccessToken()
@@ -15,16 +16,16 @@ function send_mail(words, recipient) {
         service: 'gmail',
         auth: {
             type: 'OAuth2',
-            user: config.user,
-            clientId: config.clientId,
-            clientSecret: config.clientSecret,
-            refreshToken: config.refreshToken,
+            user: process.env.user,
+            clientId: process.env.clientId,
+            clientSecret: process.env.clientSecret,
+            refreshToken: process.env.refreshToken,
             accessToken: accessToken
         }
     })
 
     const mail_options = {
-        from: `ME <${config.user}>`,
+        from: `ME <${process.env.user}>`,
         to: recipient,
         subject: 'BOP! got em',
         text: words
